@@ -8,7 +8,7 @@ html{
 body {
         margin:0;
         height: auto;
-        background-image: url("../img/titanic.jpg"); background-repeat: no-repeat;
+        background-image: url("../img/interstellar.jpg"); background-repeat: no-repeat;
         background-size:100% 100%;
         font-family: 'Didact Gothic';
     } /* fix the margin problem of the bar (set it at the far left)*/
