@@ -11,6 +11,7 @@ body {
         background-image: url("../img/interstellar.jpg"); background-repeat: no-repeat;
         background-size:100% 100%;
         font-family: 'Didact Gothic';
+        background-color:#475150;
     } /* fix the margin problem of the bar (set it at the far left)*/
 
 :root{
@@ -26,7 +27,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: auto;
-    background-color: var(--primary-color) ; /* a7la blue gbto fe 7yaty*/
+    background-color: var(--primary-color); /* a7la blue gbto fe 7yaty*/
     top: 0;
     width: 100%;
 }
@@ -85,11 +86,9 @@ footer {
     text-shadow: 0.04em 0.04em var(--alt-secondry-color);
 }
 .cover-photo{
-    height: 5%;/*400px;
-    width: 300px;*/
+    height: 5%;
     width: 20%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 2%;
 }
 
 /* Fading animation */
