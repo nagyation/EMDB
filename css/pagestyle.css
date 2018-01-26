@@ -7,10 +7,10 @@ html{
 body {
         margin:0;
         height: auto;
-        background-image: url("../img/interstellar.jpg"); background-repeat: no-repeat;
-        background-size:100% 300%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba( 9,33, 43)) no-repeat , url('../img/interstellar.jpg') no-repeat;        
+        background-size:100% 100%;
         font-family: 'Didact Gothic';
-        background-color:#475150;
+        background-color:rgba( 9, 33, 43);
         padding-bottom: 2%;
     } /* fix the margin problem of the bar (set it at the far left)*/
 
@@ -44,7 +44,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 25px;
     text-decoration: none;
     font-family: 'Courgette';
 }
@@ -89,12 +89,9 @@ footer {
     height: 400px;
     width: 20%;
     margin: 2%;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:white;
+    border-width:6px;
 }
 
-/* Fading animation */
-.fade-animation {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
