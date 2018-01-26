@@ -13,13 +13,33 @@
 		rel='stylesheet'>
 
     <style>
-     .movie-name{
-         color: white;
-         text-align: center;
-     }
-     .movie-desc{
-         float:left;
-     }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        padding: 2%; 
+        margin-left: 5%;
+      }
+      .grid-container > div {
+        
+      }
+      .item1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      .item1 h1{margin-left: 6%;}
+      .Movie-photo{
+        width: 271px;
+        height: 404px;
+        margin: 0 auto;
+      }
+      .video{
+        width:800px;
+        height:400px;
+        margin-left: -8%;
+        margin-top: 10%;
+        
+      }
     </style>
   </head>
   <body>
@@ -29,26 +49,20 @@
 		  <li><a href="browse.html">Browse</a></li>
 		  <li><a href="contact.html">Contact Us</a></li>
 		  <li style="float:right"><a href="">Login</a></li>
-		</ul>
+    </ul>
 
-    <div style=" margin: auto; overflow: hidden;">
 
-    <div style="float:left; width: 50%; hight: 60%;">
- 
-        <img class="cover-photo" src="img/s1.jpg" />
-        
+    <div class="grid-container">
+      <div class="item1"><h1 class="sub-textbox">"Movies Name"</h1><img class="Movie-photo" src="img/s1.jpg" /></div>
+      <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div>
+      <div class="item3">3</div>  
+      <div class="item4">4</div>
+      <div class="item5">5</div>
+      <div class="item6">6</div>
+      <div class="item7">7</div>
+      <div class="item8">8</div>  
     </div>
-    <h1>wla3</h1>
 
-    <div class="movie-desc">
-
-        <h1 class="head_textbox movie-name">Movie Name</h1>
-        
-    <p>
-        Here is where the description of the movie will appear
-    </p>
-    </div>
-    </div>
 
   </body>
 
