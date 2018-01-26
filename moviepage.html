@@ -13,36 +13,36 @@
 		rel='stylesheet'>
 
     <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 10px;
-        padding: 2%; 
-        margin-left: 5%;
-      }
-      .details{ padding: 2%; background-color: var(--alt-secondry-color);}
-      .details p{ margin-top: -2%;}
-      .details p,h4{margin-left: 5%;}
-      .item1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-      }
-      .item1 h1{margin-left: 6%;}
-      .Movie-photo{
-        width: 271px;
-        height: 404px;
-        margin: 0 auto;
-      }
-      .video{
-        width:800px;
-        height:400px;
-        margin-left: -8%;
-        margin-top: 10%; 
-      }
-      .body-textbox{
-        color: #fff;
-        font-size: 1.2em;
-      }
+     .grid-container {
+         display: grid;
+         grid-template-columns: auto auto auto;
+         grid-gap: 10px;
+         padding: 2%; 
+         margin-left: 5%;
+     }
+     .details{ padding: 2%; background-color: var(--alt-secondry-color);}
+     .details p,h4{margin-left: 5%; margin-top: -0.5%}
+     .details p{ margin-top: -2%;}
+     .item1 {
+         grid-column-start: 1;
+         grid-column-end: 3;
+     }
+     .item1 h1{margin-left: 6%;}
+     .Movie-photo{
+         width: 271px;
+         height: 404px;
+         margin: 0 auto;
+     }
+     .video{
+         width:800px;
+         height:400px;
+         margin-left: -8%;
+         margin-top: 10%; 
+     }
+     .body-textbox{
+         color: #fff;
+         font-size: 1.2em;
+     }
     </style>
   </head>
   <body>
@@ -51,7 +51,7 @@
 		  <li><a href="home.html">Home</a></li>
 		  <li><a href="browse.html">Browse</a></li>
 		  <li><a href="contact.html">Contact Us</a></li>
-		  <li style="float:right"><a href="">Login</a></li>
+		  <li style="float:right"><a href="login.html">Login</a></li>
     </ul>
 
     <div class="grid-container">
@@ -59,7 +59,7 @@
       <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div> 
     </div>
     <div class="details">
-      <h4 class="sub-textbox">Storyline</h4>
+        <h4 class="sub-textbox" style="text-decoration: underline;">Storyline:</h4>
       <p class="body-textbox">Captain Jack Sparrow finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis,
          the terrifying Captain Salazar, escape from the Devil's Triangle, 
          determined to kill every pirate at sea...including him. 
