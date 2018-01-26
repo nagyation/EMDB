@@ -8,8 +8,9 @@ html{
 body {
         margin:0;
         height: auto;
-        background-image: url("../img/titanic.jpg"); background-repeat: no-repeat;
-        background-size:100% 100%;
+        background-image: url("../img/titanic.jpg"); 
+        background-repeat: no-repeat;
+        background-size:100% 300%; /* not a good solution to stretch the image it must be 'cover' */
         font-family: 'Didact Gothic';
     } /* fix the margin problem of the bar (set it at the far left)*/
 
@@ -85,11 +86,10 @@ footer {
     text-shadow: 0.04em 0.04em var(--alt-secondry-color);
 }
 .cover-photo{
-    height: 5%;/*400px;
-    width: 300px;*/
-    width: 20%;
+    height: 400px;
+    width: 300px;
     margin-left: 2%;
-    margin-right: 2%;
+    margin-right: 2%;  
 }
 
 /* Fading animation */
@@ -99,3 +99,4 @@ footer {
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
