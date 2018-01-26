@@ -2,7 +2,6 @@ html{
     margin: 0;
     height: 100%;
     width: 100%;
-    padding-bottom: 100px;
 }
 
 body {
@@ -12,6 +11,7 @@ body {
         background-size:100% 300%;
         font-family: 'Didact Gothic';
         background-color:#475150;
+        padding-bottom: 2%;
     } /* fix the margin problem of the bar (set it at the far left)*/
 
 :root{
