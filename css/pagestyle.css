@@ -8,9 +8,8 @@ html{
 body {
         margin:0;
         height: auto;
-        background-image: url("../img/titanic.jpg"); 
-        background-repeat: no-repeat;
-        background-size:100% 300%; /* not a good solution to stretch the image it must be 'cover' */
+        background-image: url("../img/interstellar.jpg"); background-repeat: no-repeat;
+        background-size:100% 300%;
         font-family: 'Didact Gothic';
     } /* fix the margin problem of the bar (set it at the far left)*/
 
@@ -99,4 +98,3 @@ footer {
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
