@@ -20,9 +20,9 @@
         padding: 2%; 
         margin-left: 5%;
       }
-      .grid-container > div {
-        
-      }
+      .details{ padding: 2%; background-color: var(--alt-secondry-color);}
+      .details p{ margin-top: -2%;}
+      .details p,h4{margin-left: 5%;}
       .item1 {
         grid-column-start: 1;
         grid-column-end: 3;
@@ -37,8 +37,11 @@
         width:800px;
         height:400px;
         margin-left: -8%;
-        margin-top: 10%;
-        
+        margin-top: 10%; 
+      }
+      .body-textbox{
+        color: #fff;
+        font-size: 1.2em;
       }
     </style>
   </head>
@@ -51,17 +54,19 @@
 		  <li style="float:right"><a href="">Login</a></li>
     </ul>
 
-
     <div class="grid-container">
       <div class="item1"><h1 class="sub-textbox">"Movies Name"</h1><img class="Movie-photo" src="img/s1.jpg" /></div>
-      <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div>
-      <div class="item3">3</div>  
-      <div class="item4">4</div>
-      <div class="item5">5</div>
-      <div class="item6">6</div>
-      <div class="item7">7</div>
-      <div class="item8">8</div>  
+      <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div> 
     </div>
+    <div class="details">
+      <h4 class="sub-textbox">Storyline</h4>
+      <p class="body-textbox">Captain Jack Sparrow finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis,
+         the terrifying Captain Salazar, escape from the Devil's Triangle, 
+         determined to kill every pirate at sea...including him. 
+         Captain Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, 
+         a powerful artifact that bestows upon its possessor total control over the seas.</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
 
 
   </body>
