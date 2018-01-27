@@ -7,10 +7,8 @@
 
 
 		<link rel="stylesheet" type="text/css" href="css/pagestyle.css">  
-		<link href='https://fonts.googleapis.com/css?family=Courgette' 
-		rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' 
-		rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 
     <style>
       .grid-container {
@@ -18,31 +16,49 @@
         grid-template-columns: auto auto auto;
         grid-gap: 10px;
         padding: 2%; 
-        margin-left: 5%;
-      }
-      .details{ padding: 2%; background-color: var(--alt-secondry-color);}
-      .details p{ margin-top: -2%;}
-      .details p,h4{margin-left: 5%;}
-      .item1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-      }
+        margin-left: 5%;}
+      .details{ padding: 2%; background-color: var(--alt-secondry-color); border-radius: 25px; width: 80%; margin-left: 7%;}
+      .details p,h4{margin-left: 1%; margin-top: -2%;}
+      .details p {margin-top: -3.5%;}
+      .item1 {grid-column-start: 1; grid-column-end: 3;}
       .item1 h1{margin-left: 6%;}
-      .Movie-photo{
-        width: 271px;
-        height: 404px;
-        margin: 0 auto;
-      }
-      .video{
-        width:800px;
-        height:400px;
-        margin-left: -8%;
-        margin-top: 10%; 
-      }
-      .body-textbox{
-        color: #fff;
+      .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
+      .video{width:800px; height:400px; margin-left: -8%; margin-top: 10%; }
+      .body-textbox{color: #fff ; font-size: 1.2em;}
+      .chip {
+        display: inline-block;
+        padding: 0 25px;
+        height: 70px;
+        font-size: 25px;
+        line-height: 70px;
+        border-radius: 35px;
+        background-color: #f1f1f1;
+        margin-left: 2%;}
+      .chip img {
+          float: left;
+          margin: 0 10px 0 -25px;
+          height: 70px;
+          width: 70px;
+          border-radius: 70%;}
+      .cast{margin-top: -2.5%;}
+      .review{ padding: 2%; width: 80%; background-color: var(--alt-secondry-color); border-radius: 25px; margin-left: 7%;}
+      .comment textarea{ background-color : var(--primary-color);
+             color: white;
+             font-style: bold;
+             border-color: var(--alt-primary-color);
+             border-radius: 5px;width: 60%; margin-top: -1.5%; margin-left: 1.2%;}
+      .spinner{
+             background-color : var(--primary-color);
+             color: white;
+             font-style: bold;
+             border-color: var(--alt-primary-color);
+             border-radius: 5px;
+             font-size: 1.1em;
+         }
+      .button{ margin-left: 80%;
         font-size: 1.2em;
-      }
+        background-color : var(--primary-color);
+        border-color: var(--alt-primary-color);}
     </style>
   </head>
   <body>
@@ -56,42 +72,62 @@
 
     <div class="grid-container">
       <div class="item1"><h1 class="sub-textbox">"Movies Name"</h1><img class="Movie-photo" src="img/s1.jpg" /></div>
-      <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div> 
+      <div class="item2"><iframe class="video" src=""></iframe></div> 
     </div>
+    <hr><br>
     <div class="details">
-      <h4 class="sub-textbox">Storyline</h4>
+      <h4 class="sub-textbox">Storyline :</h4>
       <p class="body-textbox">Captain Jack Sparrow finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis,
          the terrifying Captain Salazar, escape from the Devil's Triangle, 
          determined to kill every pirate at sea...including him. 
          Captain Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, 
          a powerful artifact that bestows upon its possessor total control over the seas.</p>
-    </div>
-    <div>
-      <form class="form-horizontal"ng-submit="reviews.addReview(product.reviews)">
-        <product-review class="well live-preview"
-            ng-show="!reviews.review.isEmpty()"
-            review="reviews.review">
-        </product-review>
+      <hr><br>
       
-        <fieldset class="form-group">
-          <label>Your Review:</label>
-          <textarea class="form-control" rows="5"
-              ng-model="reviews.review.body"></textarea>
-        </fieldset>
-        <fieldset class="form-group">
-          <label>Stars:</label>
-          <select ng-model="reviews.review.stars">
+      <h4 class="sub-textbox">Director :</h4>
+      <div class="cast">
+        <div class="chip">
+          <img src="img/Bryan Buckley.jpg" alt="Person" width="96" height="96">
+          Bryan Buckley
+        </div><br><br>
+      </div>
+
+      <hr><br>
+      <h4 class="sub-textbox">Cast :</h4>
+      <div class="cast">
+        <div class="chip">
+          <img src="img/Al Pacino.jpg" alt="Person" width="96" height="96">
+          Al Pacino as "Seymour Tolbin"
+        </div><br><br>
+        <div class="chip">
+          <img src="img/Evan Peters.jpg" alt="Person" width="96" height="96">
+          Evan Peters	as "Jay Bahadur"
+        </div><br><br>
+        <div class="chip">
+          <img src="img/Melanie Griffith.jpg" alt="Person" width="96" height="96">
+          Melanie Griffith as "Maria Bahadur"
+        </div>
+      </div>
+    </div><hr>
+
+    <form class="review"><br>
+      <div class="comment">
+        <h4 class="body-textbox">Comment :</h4>
+        <textarea rows="7"></textarea>
+      </div><br>
+      <div>
+        <h4 class="body-textbox">Stars :<h4>
+          <select class="spinner">
             <option value="5">5 stars</option>
             <option value="4">4 stars</option>
             <option value="3">3 stars</option>
             <option value="2">2 stars</option>
             <option value="1">1 star</option>
           </select>
-        </fieldset>
-        <button type="submit" class="btn btn-primary pull-right">Submit</button>
-      </form>
-    </div>
-
+      </div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+    
 
   </body>
 
