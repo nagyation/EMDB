@@ -4,46 +4,11 @@
 
     <meta charset="utf-8">
     <title> Movie Details</title>
+    <link rel="stylesheet" type="text/css" href="css/pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="css/movie page.css">   
+		<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 
-
-		<link rel="stylesheet" type="text/css" href="css/pagestyle.css">  
-		<link href='https://fonts.googleapis.com/css?family=Courgette' 
-		rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' 
-		rel='stylesheet'>
-
-    <style>
-     .grid-container {
-         display: grid;
-         grid-template-columns: auto auto auto;
-         grid-gap: 10px;
-         padding: 2%; 
-         margin-left: 5%;
-     }
-     .details{ padding: 2%; background-color: var(--alt-secondry-color);}
-     .details p,h4{margin-left: 5%; margin-top: -0.5%}
-     .details p{ margin-top: -2%;}
-     .item1 {
-         grid-column-start: 1;
-         grid-column-end: 3;
-     }
-     .item1 h1{margin-left: 6%;}
-     .Movie-photo{
-         width: 271px;
-         height: 404px;
-         margin: 0 auto;
-     }
-     .video{
-         width:800px;
-         height:400px;
-         margin-left: -8%;
-         margin-top: 10%; 
-     }
-     .body-textbox{
-         color: #fff;
-         font-size: 1.2em;
-     }
-    </style>
   </head>
   <body>
 
@@ -56,8 +21,9 @@
 
     <div class="grid-container">
       <div class="item1"><h1 class="sub-textbox">"Movies Name"</h1><img class="Movie-photo" src="img/s1.jpg" /></div>
-      <div class="item2"><iframe class="video" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe></div> 
+      <div class="item2"><iframe class="video" src=""></iframe></div> 
     </div>
+    <hr><br>
     <div class="details">
         <h4 class="sub-textbox" style="text-decoration: underline;">Storyline:</h4>
       <p class="body-textbox">Captain Jack Sparrow finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis,
@@ -65,9 +31,66 @@
          determined to kill every pirate at sea...including him. 
          Captain Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, 
          a powerful artifact that bestows upon its possessor total control over the seas.</p>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br>
+      <hr><br>
+      
+      <h4 class="sub-textbox">Director :</h4>
+      <div class="cast">
+        <div class="chip">
+          <img src="img/Bryan Buckley.jpg" alt="Person" width="96" height="96">
+          Bryan Buckley
+        </div><br><br>
+      </div>
 
+      <hr><br>
+      <h4 class="sub-textbox">Cast :</h4>
+      <div class="cast">
+        <div class="chip">
+          <img src="img/Al Pacino.jpg" alt="Person" width="96" height="96">
+          Al Pacino as "Seymour Tolbin"
+        </div><br><br>
+        <div class="chip">
+          <img src="img/Evan Peters.jpg" alt="Person" width="96" height="96">
+          Evan Peters	as "Jay Bahadur"
+        </div><br><br>
+        <div class="chip">
+          <img src="img/Melanie Griffith.jpg" alt="Person" width="96" height="96">
+          Melanie Griffith as "Maria Bahadur"
+        </div>
+      </div>
+    </div><hr>
+
+    <div class="commintsList">
+      <h4 class="sub-textbox">Comments :</h4>
+      <div>
+        <h4 class="body-textbox">Mohamed Medhat</h4>
+        <p class="body-textbox">this is a very good movie</p>
+      </div><hr><br>
+      <div>
+          <h4 class="body-textbox">M</h4>
+          <p class="body-textbox">this is a very good movie</p>
+      </div><hr><br>
+      <div>
+          <h4 class="body-textbox">Mohamed Medhat</h4>
+          <p class="body-textbox">this is a very good movie</p>
+      </div><hr><br>
+    </div><br>
+
+    <form class="review"><br>
+      <div class="comment">
+        <h4 class="body-textbox">Comment :</h4>
+        <textarea rows="7"></textarea>
+      </div><br>
+      <div class="rating">
+        <legend class="body-textbox">Rate:</legend>
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+			</div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+    
 
   </body>
 

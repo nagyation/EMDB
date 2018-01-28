@@ -8,13 +8,11 @@ body {
     margin:0;
     height: auto;
     background: linear-gradient(to bottom, rgba(255,255,255,0) , rgba(9,33,43)) no-repeat , url('../img/interstellar.jpg') no-repeat;
-
-        background-size:100% 100%;
-        font-family: 'Didact Gothic';
-
-        background-img: url('../img/interstellar.jpg');
-        background-color: #09212B;
-        padding-bottom: 2%;
+    background-size:100% 100%;
+    font-family: 'Didact Gothic';
+    background-img: url('../img/interstellar.jpg');
+    background-color: #09212B;
+    padding-bottom: 2%;
     } /* fix the margin problem of the bar (set it at the far left)*/
 
 :root{
