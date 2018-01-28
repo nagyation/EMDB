@@ -10,6 +10,8 @@
       .details p {margin-top: -3.5%;}
       .item1 {grid-column-start: 1; grid-column-end: 3;}
       .item1 h1{margin-left: 6%;}
+      .item1 h2{color: #FFFA00 ;font-size: 1.5em; margin-left: 120%; margin-top: -14.7%;}
+      .item1 h4{color: #fff ; font-size: 1.2em; margin-left: 128%; margin-top: -12.8%;}
       .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
       .video{width:800px; height:400px; margin-left: -8%; margin-top: 10%; }
       .body-textbox{color: #fff ; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;}
