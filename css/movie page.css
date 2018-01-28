@@ -12,7 +12,7 @@
       .item1 h1{margin-left: 6%;}
       .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
       .video{width:800px; height:400px; margin-left: -8%; margin-top: 10%; }
-      .body-textbox{color: #fff ; font-size: 1.2em;}
+      .body-textbox{color: #fff ; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;}
       .chip {
         display: inline-block;
         padding: 0 25px;
@@ -29,6 +29,8 @@
           width: 70px;
           border-radius: 70%;}
       .cast{margin-top: -2.5%;}
+      .commintsList{padding: 2%; width: 80%; margin-left: 7%;}
+      .commintsList div{ background-color: var(--primary-color); border-radius: 5px;}
       .review{ padding: 2%; width: 80%; background-color: var(--alt-secondry-color); border-radius: 25px; margin-left: 7%;}
       .comment textarea{ background-color : var(--primary-color);
              color: white;
@@ -48,7 +50,7 @@
         background-color : var(--primary-color);
         border-color: var(--alt-primary-color);}
 				
-			.rating {float:left;}
+        .rating {float:left; margin-left: 1.1%; }
 
       /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
         follow these rules. Every browser that supports :checked also supports :not(), so
@@ -69,8 +71,8 @@
           cursor:pointer;
           font-size:150%;
           line-height:1.2;
-          color:#ddd;
-          text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,0);
+          color: var(--primary-color);
+          text-shadow:1px 1px var(--alt-primary-color), 2px 2px #666, .1em .1em .2em rgba(0,0,0,0);
       }
 
       .rating:not(:checked) > label:before {
