@@ -5,13 +5,14 @@ html{
 }
 
 body {
-        margin:0;
-        height: auto;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba( 9,33, 43)) no-repeat , url('../img/interstellar.jpg') no-repeat;        
-        background-size:100% 100%;
-        font-family: 'Didact Gothic';
-        background-color:rgba( 9, 33, 43);
-        padding-bottom: 2%;
+    margin:0;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) , rgba(9,33,43)) no-repeat , url('../img/interstellar.jpg') no-repeat;
+    background-size:100% 100%;
+    font-family: 'Didact Gothic';
+    background-img: url('../img/interstellar.jpg');
+    background-color: #09212B;
+    padding-bottom: 2%;
     } /* fix the margin problem of the bar (set it at the far left)*/
 
 :root{
@@ -47,6 +48,7 @@ li a {
     padding: 14px 25px;
     text-decoration: none;
     font-family: 'Courgette';
+    font-weight: bold;
 }
 
 li a:hover:not(.active) { /* Don't change hove color */
@@ -60,9 +62,9 @@ footer {
         height: 100px;
         width: 100%;
         background-color: var(--secondry-color);
-    }
+}
 
-    p.copyright {
+p.copyright {
         position: absolute;
         width: 100%;
         color: #fff;
@@ -70,8 +72,7 @@ footer {
         font-size: 0.7em;
         text-align: center;
         bottom:0;
-    }
-
+}
 
 .head-textbox{
     color: #fff;
@@ -84,6 +85,7 @@ footer {
     color: #fff;
     font-size: 2em;
 }
+
 .cover-photo{
     height: 400px;
     width: 20%;
