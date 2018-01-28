@@ -4,8 +4,8 @@
         grid-template-columns: auto auto auto;
         grid-gap: 10px;
         padding: 2%; 
-        margin-left: 5%;}
-      .details{ padding: 2%; background-color: var(--alt-secondry-color); border-radius: 25px; width: 80%; margin-left: 7%;}
+        margin-left: 8%;}
+      .details{ padding: 2%; background-color: #000000; border-radius: 25px; width: 80%; margin-left: 8%;}
       .details p,h4{margin-left: 1%; margin-top: -2%;}
       .details p {margin-top: -3.5%;}
       .item1 {grid-column-start: 1; grid-column-end: 3;}
@@ -13,8 +13,8 @@
       .item1 h2{color: #FFFA00 ;font-size: 1.5em; margin-left: 120%; margin-top: -14.7%;}
       .item1 h4{color: #fff ; font-size: 1.2em; margin-left: 128%; margin-top: -12.8%;}
       .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
-      .video{width:800px; height:400px; margin-left: -8%; margin-top: 10%; }
-      .body-textbox{color: #fff ; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;}
+      .video{width:800px; height:400px; margin-left: -8%; margin-top: 11%; }
+      .body-textbox{color: var(--alt-primary-color); font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;text-align: justify;}
       .chip {
         display: inline-block;
         padding: 0 25px;
@@ -31,10 +31,10 @@
           width: 70px;
           border-radius: 70%;}
       .cast{margin-top: -2.5%;}
-      .commintsList{padding: 2%; width: 80%; margin-left: 7%;}
-      .commintsList div{ background-color: var(--primary-color); border-radius: 5px;}
-      .review{ padding: 2%; width: 80%; background-color: var(--alt-secondry-color); border-radius: 25px; margin-left: 7%;}
-      .comment textarea{ background-color : var(--primary-color);
+      .commintsList{padding: 2%; width: 80%; margin-left: 8%;}
+      .commintsList div{ background-color: #000000; border-radius: 5px;}
+      .review{ padding: 2%; width: 80%; background-color:#000000; border-radius: 25px; margin-left: 8%;}
+      .comment textarea{ background-color : var(--alt-primary-color);
              color: white;
              font-style: bold;
              border-color: var(--alt-primary-color);
@@ -66,14 +66,14 @@
 
       .rating:not(:checked) > label {
           float:right;
-          width:1em;
+          width:.9em;
           padding:0 .1em;
           overflow:hidden;
           white-space:nowrap;
           cursor:pointer;
           font-size:150%;
           line-height:1.2;
-          color: var(--primary-color);
+          color: var(--alt-primary-color);
           text-shadow:1px 1px var(--alt-primary-color), 2px 2px #666, .1em .1em .2em rgba(0,0,0,0);
       }
 
