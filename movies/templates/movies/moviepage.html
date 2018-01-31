@@ -4,8 +4,9 @@
 
     <meta charset="utf-8">
     <title> Movie Details</title>
-    <link rel="stylesheet" type="text/css" href="css/pagestyle.css">
-    <link rel="stylesheet" type="text/css" href="css/movie page.css">   
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'movies/css/moviepage.css' %}">   
 		<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 
@@ -13,10 +14,11 @@
   <body>
 
     <ul>
-		  <li><a href="home.html">Home</a></li>
-		  <li><a href="browse.html">Browse</a></li>
-		  <li><a href="contact.html">Contact Us</a></li>
-		  <li style="float:right"><a href="login.html">Login</a></li>
+		  <li><a href="home">Home</a></li>
+		  <li><a href="browse">Browse</a></li>
+		  <li><a href="contact">Contact Us</a></li>
+		  <li style="float:right"><a href="{% url 'registeration:login' %}">
+      Login</a></li>
     </ul>
 
     <div class="grid-container">

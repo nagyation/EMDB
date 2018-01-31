@@ -3,8 +3,9 @@
  <head>
     <meta charset="utf-8/">
     <title>hello login</title>
-    <link rel="stylesheet" type="text/css" href="css/create.css"> 
-    <link rel="stylesheet" type="text/css" href="css/pagestyle.css">   
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registeration/css/register.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css' %}">   
     <link href='https://fonts.googleapis.com/css?family=Courgette' 
 		rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' 
@@ -12,11 +13,10 @@
  </head>
  <body>
 		<ul>
-		  <li><a  
-		  	href="home.html">Home</a></li>
-		  <li><a href="history.html">Browse</a></li>
-		  <li><a href="contact.html">Contact Us</a></li>
-		  <li style="float:right"><a class="active" 	href="login.html">Login</a></li>
+		  <li><a href="{% url 'movies:home' %}">Home</a></li>
+          <li><a href="{% url 'movies:browse' %}">Browse</a></li>
+          <li><a href="">Contact Us</a></li>
+		  <li style="float:right"><a class="active" href=" {%url 'registeration:login' %}">Login</a></li>
 		</ul>
   
     <div class="create">

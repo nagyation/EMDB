@@ -3,8 +3,8 @@
 	<head>
 
 		<title>EMDB</title>
-
-		<link rel="stylesheet" type="text/css" href="css/pagestyle.css">  
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">  
 		<link href='https://fonts.googleapis.com/css?family=Courgette' 
 		rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' 
@@ -49,10 +49,10 @@
 
 		<ul>
 		  <li><a class="active" 
-		  	href="home.html">Home</a></li>
-		  <li><a href="browse.html">Browse</a></li>
-		  <li><a href="contact.html">Contact Us</a></li>
-		  <li style="float:right"><a href="login.html">Login</a></li>
+		  	href="home">Home</a></li>
+		  <li><a href="browse">Browse</a></li>
+		  <li><a href="contact">Contact Us</a></li>
+		  <li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
 		</ul>
 
 		<h1 class="head-textbox" style="text-align: center;">
@@ -72,7 +72,7 @@
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-	  <script src ="scripts/slideshow.js"></script>
+	  <script src ="{% static 'scripts/slideshow.js' %}"></script>
 
 	</body>
 </html>

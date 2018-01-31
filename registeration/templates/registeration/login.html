@@ -3,17 +3,18 @@
  <head>
     <meta charset="utf-8/">
     <title>log in</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-				<link rel="stylesheet" type="text/css" href="css/pagestyle.css">
-				<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-				<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registeration/css/login.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
  </head>
  <body>
 		<ul>
-		  <li><a href="home.html">Home</a></li>
-		  <li><a href="history.html">Browse</a></li>
-		  <li><a href="contact.html">Contact Us</a></li>
-		  <li style="float:right"><a  class="active" 	href="">Log in</a></li>
+		  <li><a href="{% url 'movies:home' %}">Home</a></li>
+		  <li><a href="{% url 'movies:browse' %}">Browse</a></li>
+		  <li><a href="">Contact Us</a></li>
+		  <li style="float:right"><a  class="active" href="">Log in</a></li>
 		</ul>
   <div class="login">
    <form name="register">
@@ -21,7 +22,7 @@
 				<input type="email" name="email" placeholder="examble@host.com"><br>
 				<label >Password</label>
 				<input type="password" name="Your Password" placeholder="Your Password"><br>
-				<div class="signup" >or <a  href="create.html" style="color: #FFFFFF">signup</a></div>
+				<div class="signup" >or <a  href="register" style="color: #FFFFFF">signup</a></div>
 				<div class="button"><input type="submit" value="login"></div>
 			</form>
   </div>
