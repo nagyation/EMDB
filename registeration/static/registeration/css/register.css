@@ -1,12 +1,12 @@
 
 
-      input[type=submit] ,  input[type=reset] {display: block;
+input[type=submit] ,  input[type=reset] {display: block;
     background-color:var(--primary-color);
     color:#FFFFFF;
     display: block;   
     width: 40%;
     padding: 12px 20px;
-    margin-right: 5%;
+    margin-right: 8%;
     display:inline-block;
     border: none;
     border-radius:5px;
@@ -23,9 +23,8 @@
 
 
 div.create{color: var(--primary-color);  width:25%;
-    position: absolute;   left:540px;  top:100px;  border-radius:10px;
-    
-    
+    position: absolute;   left:37%;  top:10%;  border-radius:10px;
+    padding: 2%
 }
 
 

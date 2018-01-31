@@ -5,7 +5,7 @@
         grid-gap: 10px;
         padding: 2%; 
         margin-left: 8%;}
-      .details{ padding: 2%; background-color: #000000; border-radius: 25px; width: 80%; margin-left: 8%;}
+      .details{ padding: 2%; background-color: var(--secondry-color); border-radius: 25px; width: 80%; margin-left: 8%;}
       .details p,h4{margin-left: 1%; margin-top: -2%;}
       .details p {margin-top: -3.5%;}
       .item1 {grid-column-start: 1; grid-column-end: 3;}
@@ -14,7 +14,7 @@
       .item1 h4{color: #fff ; font-size: 1.2em; margin-left: 128%; margin-top: -12.8%;}
       .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
       .video{width:800px; height:400px; margin-left: -8%; margin-top: 11%; }
-      .body-textbox{color: var(--alt-primary-color); font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;text-align: justify;}
+      .body-textbox{color: white; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;text-align: justify;}
       .chip {
         display: inline-block;
         padding: 0 25px;
@@ -32,12 +32,10 @@
           border-radius: 70%;}
       .cast{margin-top: -2.5%;}
       .commintsList{padding: 2%; width: 80%; margin-left: 8%;}
-      .commintsList div{ background-color: #000000; border-radius: 5px;}
-      .review{ padding: 2%; width: 80%; background-color:#000000; border-radius: 25px; margin-left: 8%;}
-      .comment textarea{ background-color : var(--alt-primary-color);
-             color: white;
-             font-style: bold;
-             border-color: var(--alt-primary-color);
+      .commintsList div{ background-color: var(--secondry-color); border-radius: 5px;}
+      .review{ padding: 2%; width: 80%; background-color:var(--secondry-color); border-radius: 25px; margin-left: 8%;}
+      .comment textarea{ background-color : white;
+             color: black;
              border-radius: 5px;width: 60%; margin-top: -1.5%; margin-left: 1.2%;}
       .spinner{
              background-color : var(--primary-color);
@@ -49,8 +47,7 @@
          }
       .button{ margin-left: 80%;
         font-size: 1.2em;
-        background-color : var(--primary-color);
-        border-color: var(--alt-primary-color);}
+        background-color : white;}
 				
         .rating {float:left; margin-left: 1.1%; }
 
@@ -73,8 +70,8 @@
           cursor:pointer;
           font-size:150%;
           line-height:1.2;
-          color: var(--alt-primary-color);
-          text-shadow:1px 1px var(--alt-primary-color), 2px 2px #666, .1em .1em .2em rgba(0,0,0,0);
+          color: white;
+          text-shadow:1px 1px white, 2px 2px #666, .1em .1em .2em rgba(0,0,0,0);
       }
 
       .rating:not(:checked) > label:before {
