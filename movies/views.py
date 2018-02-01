@@ -7,7 +7,7 @@ from django.shortcuts import render
 class HomeView(TemplateView):
 	template_name = "movies/home.html"
 	def get(self,request):
-		latest_movies =  list(Movie.objects.order_by("production_date").values_list('movie_logo',flat=True)[:5])
+		latest_movies =  list(Movie.objects.order_by("-production_date").values_list('movie_logo',flat=True)[:5])
 		print(latest_movies)
 		return render(request,self.template_name, {'latest_movies': latest_movies})
 
@@ -17,7 +17,7 @@ class MovieView(TemplateView):
 class BrowseView(ListView):
 	template_name = "movies/browse.html"
 	def get(self,request):
-		all_movies = Movie.objects.all()
+		all_movies = Movie.objects.order_by("-production_date")
 		paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
 		page = request.GET.get('page')
 		movies = paginator.get_page(page)
