@@ -140,12 +140,11 @@
         </div>
 
         <!-- !PAGE CONTENT! -->
-    
         <!-- First Photo Grid-->
         <div style="width: 100%; padding: 30px;">
-                <img src="" class="cover-photo" style="margin-left: 16%">
-                <img src="" class="cover-photo">
-                <img src="" class="cover-photo">
+                <img src="{{ movie.movie_logo }}" class="cover-photo" style="margin-left: 16%">
+                <img src="{{ movie.movie_logo }}" class="cover-photo">
+                <img src="{{ movie.movie_logo }}" class="cover-photo">
         </div>
         
         <!-- Second Photo Grid-->
@@ -176,10 +175,10 @@
 
         <script>
             var SLIDES_COUNT = 9;
-            var slidesSrc = ["img/s1.jpg","img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg",
-            "img/s6.jpg","img/s7.jpg","img/s8.jpg","img/s9.jpg","img/s10.jpg","img/s11.jpg",
-            "img/s12.jpg","img/s13.jpg","img/s14.jpg","img/s15.jpg","img/s16.jpg","img/s17.jpg","img/s18.jpg",
-            "img/s19.jpg",];
+            var slidesSrc = [];
+            {% for movie in all_movies %}
+                slidesSrc.push("{{ movie.movie_logo }}")
+            {% endfor %}
             showSlides();
 
             function showMovies(n)
