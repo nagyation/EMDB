@@ -142,9 +142,9 @@
         <!-- !PAGE CONTENT! -->
         <!-- First Photo Grid-->
         <div style="width: 100%; padding: 30px;">
-                <img src="{{ movie.movie_logo }}" class="cover-photo" style="margin-left: 16%">
-                <img src="{{ movie.movie_logo }}" class="cover-photo">
-                <img src="{{ movie.movie_logo }}" class="cover-photo">
+                <img src="" class="cover-photo" style="margin-left: 16%">
+                <img src="" class="cover-photo">
+                <img src="" class="cover-photo">
         </div>
         
         <!-- Second Photo Grid-->
@@ -162,21 +162,29 @@
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" style="text-align: center;">
-                <a href="#">&laquo;</a>
-                <a class="active" href="#" onclick="showMovies(0)">1</a>
-                <a href="#" onclick="showMovies(9)">2</a>
-                <a href="#" onclick="showMovies(18)">3</a>
-                <a href="#"onclick="showMovies(27)">4</a>
-                <a href="#" onclick="showMovies(36)">5</a>
-                <a href="#" onclick="showMovies(45)">6</a>
-                <a href="#" >&raquo;</a>
-        </div>
+        {% if movies %}
+            <div class="pagination" style="text-align: center;">
+                {% if movies.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}">&laquo;</a>
+                {% endif %}
+                {% for pg in movies.paginator.page_range %}
+                    {% if posts.number == pg %}
+                        <a class="active" href="?page={{ pg }}">{{ pg }}</a>
+                    {% else %}
+                        <a href="?page={{ pg }}">{{ pg }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if movies.has_next %}
+                    <a href="?page={{ movies.next_page_number }}">&raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
 
         <script>
             var SLIDES_COUNT = 9;
             var slidesSrc = [];
-            {% for movie in all_movies %}
+            {% for movie in movies %}
                 slidesSrc.push("{{ movie.movie_logo }}")
             {% endfor %}
             showSlides();
