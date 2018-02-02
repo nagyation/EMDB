@@ -1,15 +1,29 @@
 from django import forms
-from registeration.models import Register
+from django.forms import ModelForm
+from django.contrib.auth.models import User
+
 
 
 
 class RegisterForm(forms.ModelForm):
-      first_name =forms.CharField(max_length=100)
-      last_name = forms.CharField(max_length=100)
-      email = forms.EmailField()
-      password = forms.CharField(max_length=100,widget=forms.PasswordInput)
-      confirm_password = forms.CharField(max_length=100,widget=forms.PasswordInput)
+    password=forms.CharField(widget=forms.PasswordInput())
+    confirm_password=forms.CharField(widget=forms.PasswordInput())
+    class Meta:
+        model=User
+        fields=('username','first_name','last_name','email','password')
 
-      class Meta:
-          model= Register
-          fields=('first_name','last_name','email','password','confirm_password')
+    def clean(self):
+        cleaned_data = super(UserForm, self).clean()
+        password = cleaned_data.get("password")
+        confirm_password = cleaned_data.get("confirm_password")
+
+        if password != confirm_password:
+            raise forms.ValidationError(
+                "password and confirm_password does not match"
+            )
+
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username',  'password')
