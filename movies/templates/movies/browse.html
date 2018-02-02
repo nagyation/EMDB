@@ -29,30 +29,23 @@
         <div>
             <div class="textbody-left">
                 <p style="margin-bottom: -2%;">Genre:</p>
-                <form action="#" >
-                    <select name="genre" class="spinner">
-                    <option value="all">All</option>
-                    <option value="action">Action</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="crime">Crime</option>
-                    <option value="drama">Drama</option>
-                    <option value="horror">Horror</option>
-                    </select>        
+                <form action="" method="post" >
+                    {% csrf_token %}
+                    {{ form.genre }}
                 </form>
             </div>
             <div class="textbody-right">    
                 <p style="margin-bottom: -2%;">Sort by:</p>
-                <form action="#">
-                    <select name="genre" class="spinner">
-                        <option value="productiondate">Production Date</option>
-                        <option value="name">Name</option>
-                    </select>    
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.sort }}
                 </form>
             </div>
 
             <div style= "margin-left: 30%; max-width:600px;"> 
-                <form class="search" action="#" >
-                    <input type="text" placeholder="Search by Movie Name..." name="search">
+                <form class="search" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.search }}
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
