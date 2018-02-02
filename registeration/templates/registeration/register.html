@@ -24,11 +24,13 @@
           {% csrf_token %}
           {{ form.as_p }}
           <input type="reset" value="Reset">
-        <input type="submit" value="Create">
+        <input type="submit" value="Create" onclick="return Validate()">
+
+
 
       </form>
         <h1>{{ first_name  }}</h1>
     </div>
-  
+
  </body>
 </html>
