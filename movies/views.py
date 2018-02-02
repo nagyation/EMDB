@@ -31,11 +31,10 @@ class BrowseView(ListView):
 		form = BrowseForm(request.POST)
 		if form.is_valid():
 			text = form.cleaned_data['search']
-			genre = form.cleaned_data['genre']
+			genre=form.cleaned_data['genre']
 			sort = form.cleaned_data['sort']
 			form = BrowseForm()
-			all_movies = Movie.objects.filter(name__contains=text )
-			#all_movies = Movie.objects.filter(name__contains=text ,genre__contains=genre ).order_by(sort)
+			all_movies = Movie.objects.filter(name__contains=text ,genre__contains=genre ).order_by(sort)
 			paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
 			page = request.GET.get('page')
 			movies = paginator.get_page(page)
