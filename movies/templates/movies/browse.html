@@ -60,21 +60,21 @@
 
         <!-- !PAGE CONTENT! -->
         <!-- First Photo Grid-->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
         </div>
         
         <!-- Second Photo Grid-->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
         </div>
 
         <!-- Third Photo Grid -->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
@@ -108,23 +108,18 @@
             {% endfor %}
             showSlides();
 
-            function showMovies(n)
-            {
-                var i;
-                var slides = document.getElementsByClassName("cover-photo");
-
-                for(i = 0; i < SLIDES_COUNT ; i++)
-                {
-                    slides[i].src = slidesSrc[n] ;
-                    n++;
-                }
-            }
             function showSlides() {
                 var i;
                 var slides = document.getElementsByClassName("cover-photo");
 
-                for(i = 0; i < SLIDES_COUNT ; i ++)
-                    slides[i].src = slidesSrc[i] ;
+                for(i = 0; i < SLIDES_COUNT ; i ++) {
+                    if (i < slidesSrc.length) {
+                        slides[i].src = slidesSrc[i];
+                    }
+                    else {
+                        slides[i].src = "";
+                    }
+                }
             }
 
 

@@ -8,8 +8,8 @@ class Movie (models.Model):
 	description = models.CharField(max_length=10000)
 	rate = models.FloatField()
 	trailer_url = models.CharField(max_length=1000)
-	movie_logo = models.CharField(max_length=1000)
-	#genre = models.CharField(max_length=250)
+	movie_logo = models.CharField(default='',max_length=1000)
+	genre = models.CharField(default='', max_length=250)
 
 	def __str__(self):
 		return self.name+' - '+ str(self.production_date)

@@ -77,3 +77,7 @@
              border-color: var(--alt-primary-color);
              border-radius: 5px;
          }
+
+         .browse-pages img[src=""]{
+            display: none;
+         }
