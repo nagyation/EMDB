@@ -50,5 +50,8 @@ div.signup{  list-style-type: none; float: left;border-radius:5px; font-size: 10
         font-size: 150%;
 }
 
-
+.errorlist
+{
+    color: red;
+}
     
