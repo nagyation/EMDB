@@ -5,6 +5,9 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 
+class ProfileView(TemplateView):
+    template_name = "registeration/profile.html"
+
 class LoginView(TemplateView):
 	template_name = "registeration/login.html"
 

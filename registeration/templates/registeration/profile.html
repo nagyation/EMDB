@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browse</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'movies/css/browsestyle.css'%}">
+        <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>    
+    <body >
+        
+           <ul>
+            <li><a href="home">Home</a></li>
+            <li><a class="active" href="browse">Browse</a></li>
+            <li ><a href="{% url 'registeration:profile' %}">
+             My Profile</a></li>
+            <li><a href="contact">Contact Us</a></li>
+            <li style="float:right"><a href="{% url 'registeration:login' %}">
+            Login</a></li>
+            
+        </ul>
+
+
+        <div class="card">
+          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+            <h1>John Doe</h1>
+
+        </div>
+
+
+
+
+
+    </body>
+
+  </html>

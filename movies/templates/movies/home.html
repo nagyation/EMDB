@@ -53,6 +53,9 @@
 		  <li><a href="browse">Browse</a></li>
 		  <li><a href="contact">Contact Us</a></li>
       {% if user.is_authenticated %}
+			 <li ><a href="{% url 'registeration: profile' %}">
+             {{ user.first_name}}</a></li>
+
       <li style="float:right"><a href="{% url 'registeration:logout' %}">Logout</a></li>
       {% else %}
 		  <li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
