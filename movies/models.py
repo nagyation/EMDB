@@ -9,6 +9,7 @@ class Movie (models.Model):
 	movie_logo = models.CharField(default='',max_length=1000)
 	genre = models.CharField(default='', max_length=250)
 
+
 	def __str__(self):
 		return self.name+' - '+ str(self.production_date)
 
