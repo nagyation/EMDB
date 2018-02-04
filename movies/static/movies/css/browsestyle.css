@@ -1,0 +1,83 @@
+        * {
+             box-sizing: border-box;
+         }
+
+         .form-control {
+             padding: 10px;
+             font-size: 17px;
+             border: 1px solid grey;
+             float: left;
+             width: 80%;
+             background: #f1f1f1;
+             margin-top: 3%;
+             border-radius: 7px 0px 0px 7px;
+         }
+
+         form.search button {
+             float: left;
+             width: 20%;
+             padding: 10px;
+             background: #408cbf;
+             color: white;
+             font-size: 17px;
+             border: 1px solid grey;
+             border-left: none;
+             cursor: pointer;
+             margin-top: 3%;
+             border-radius: 0px 7px 7px 0px;
+         }
+
+         form.search button:hover {
+             background: #005c99;
+         }
+
+         form.search::after {
+             content: "";
+             clear: both;
+             display: table;
+         }
+
+         .pagination a {
+             color: white;
+             padding: 8px 16px;
+             text-decoration: none;
+             transition: background-color .3s;
+         }
+
+         .pagination a.active {
+             background-color: #333;
+             color: white;
+         }
+
+         .pagination a:hover:not(.active)
+         {background-color: #777;}
+
+         .textbody-left {
+             margin-left: 40%;
+             float: left;
+             width: auto;
+             color: white;
+             font-size: 25px;
+             text-align: center;
+             margin-top: -3%;
+         }
+         .textbody-right {
+             margin-left : 5%;
+             float: left;
+             width: auto;
+             color: white;
+             font-size: 25px;
+             text-align: center;
+             margin-top: -3%;
+         }
+         .spinner{
+             background-color : var(--primary-color);
+             color: white;
+             font-style: bold;
+             border-color: var(--alt-primary-color);
+             border-radius: 5px;
+         }
+
+         .browse-pages img[src=""]{
+            display: none;
+         }

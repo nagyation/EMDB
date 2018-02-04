@@ -2,11 +2,17 @@ var slideIndexRear = 0;
 var slideIndexFront = 2;
 var SLIDES_COUNT = 3;
 var currentSlides= ["","",""];
-var slidesSrc = ["img/s1.jpg","img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg"];
+var slidesSrc = [];
 var i;
-for(i=0; i < SLIDES_COUNT ; i++)
-		currentSlides[i] = slidesSrc[(slideIndexRear+i) % slidesSrc.length];
-showSlides();
+
+function setSlides(slides)
+{
+    slidesSrc= slides;
+    for(i=0; i < SLIDES_COUNT ; i++)
+		    currentSlides[i] = slidesSrc[(slideIndexRear+i) % slidesSrc.length];
+    showSlides();
+
+}
 
 function plusSlides(n)
 {

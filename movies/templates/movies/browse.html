@@ -5,93 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">  
+        <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'movies/css/browsestyle.css'%}">
         <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <style>
-         * {
-             box-sizing: border-box;
-         }
-         
-         form.search input[type=text] {
-             padding: 10px;
-             font-size: 17px;
-             border: 1px solid grey;
-             float: left;
-             width: 80%;
-             background: #f1f1f1;
-             margin-top: 3%;
-             border-radius: 7px 0px 0px 7px;
-         }
-         
-         form.search button {
-             float: left;
-             width: 20%;
-             padding: 10px;
-             background: #408cbf;
-             color: white;
-             font-size: 17px;
-             border: 1px solid grey;
-             border-left: none;
-             cursor: pointer;
-             margin-top: 3%;
-             border-radius: 0px 7px 7px 0px;
-         }
-         
-         form.search button:hover {
-             background: #005c99;
-         }
-         
-         form.search::after {
-             content: "";
-             clear: both;
-             display: table;
-         }
-         
-         .pagination a {
-             color: white;
-             padding: 8px 16px;
-             text-decoration: none;
-             transition: background-color .3s;
-         }
-
-         .pagination a.active {
-             background-color: #333;
-             color: white;
-         }
-
-         .pagination a:hover:not(.active) 
-         {background-color: #777;}
-
-         .textbody-left {
-             margin-left: 40%;
-             float: left;
-             width: auto;
-             color: white;
-             font-size: 25px;
-             text-align: center;
-             margin-top: -3%;
-         }
-         .textbody-right {
-             margin-left : 5%;
-             float: left;
-             width: auto;
-             color: white;
-             font-size: 25px;
-             text-align: center;
-             margin-top: -3%;
-         }
-         .spinner{
-             background-color : var(--primary-color);
-             color: white;
-             font-style: bold;
-             border-color: var(--alt-primary-color);
-             border-radius: 5px;
-         }
-
-        </style>
     </head>    
     <body >
         
@@ -110,95 +29,90 @@
         <div>
             <div class="textbody-left">
                 <p style="margin-bottom: -2%;">Genre:</p>
-                <form action="#" >
-                    <select name="genre" class="spinner">
-                    <option value="all">All</option>
-                    <option value="action">Action</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="crime">Crime</option>
-                    <option value="drama">Drama</option>
-                    <option value="horror">Horror</option>
-                    </select>        
+                <form action="" method="post" >
+                    {% csrf_token %}
+                    {{ form.genre }}
                 </form>
             </div>
             <div class="textbody-right">    
                 <p style="margin-bottom: -2%;">Sort by:</p>
-                <form action="#">
-                    <select name="genre" class="spinner">
-                        <option value="productiondate">Production Date</option>
-                        <option value="name">Name</option>
-                    </select>    
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.sort }}
                 </form>
             </div>
 
             <div style= "margin-left: 30%; max-width:600px;"> 
-                <form class="search" action="#" >
-                    <input type="text" placeholder="Search by Movie Name..." name="search">
+                <form class="search" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.search }}
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
 
         <!-- !PAGE CONTENT! -->
-    
         <!-- First Photo Grid-->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
         </div>
         
         <!-- Second Photo Grid-->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
         </div>
 
         <!-- Third Photo Grid -->
-        <div style="width: 100%; padding: 30px;">
+        <div class="browse-pages" style="width: 100%; padding: 30px;">
                 <img src="" class="cover-photo" style="margin-left: 16%">
                 <img src="" class="cover-photo">
                 <img src="" class="cover-photo">
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" style="text-align: center;">
-                <a href="#">&laquo;</a>
-                <a class="active" href="#" onclick="showMovies(0)">1</a>
-                <a href="#" onclick="showMovies(9)">2</a>
-                <a href="#" onclick="showMovies(18)">3</a>
-                <a href="#"onclick="showMovies(27)">4</a>
-                <a href="#" onclick="showMovies(36)">5</a>
-                <a href="#" onclick="showMovies(45)">6</a>
-                <a href="#" >&raquo;</a>
-        </div>
+        {% if movies %}
+            <div class="pagination" style="text-align: center;">
+                {% if movies.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}">&laquo;</a>
+                {% endif %}
+                {% for pg in movies.paginator.page_range %}
+                    {% if posts.number == pg %}
+                        <a class="active" href="?page={{ pg }}">{{ pg }}</a>
+                    {% else %}
+                        <a href="?page={{ pg }}">{{ pg }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if movies.has_next %}
+                    <a href="?page={{ movies.next_page_number }}">&raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
 
         <script>
             var SLIDES_COUNT = 9;
-            var slidesSrc = ["img/s1.jpg","img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg",
-            "img/s6.jpg","img/s7.jpg","img/s8.jpg","img/s9.jpg","img/s10.jpg","img/s11.jpg",
-            "img/s12.jpg","img/s13.jpg","img/s14.jpg","img/s15.jpg","img/s16.jpg","img/s17.jpg","img/s18.jpg",
-            "img/s19.jpg",];
+            var slidesSrc = [];
+            {% for movie in movies %}
+                slidesSrc.push("{{ movie.movie_logo }}")
+            {% endfor %}
             showSlides();
 
-            function showMovies(n)
-            { 
-                var i;
-                var slides = document.getElementsByClassName("cover-photo");
-
-                for(i = 0; i < SLIDES_COUNT ; i++)
-                {   
-                    slides[i].src = slidesSrc[n] ;
-                    n++;
-                }
-            }
             function showSlides() {
                 var i;
                 var slides = document.getElementsByClassName("cover-photo");
 
-                for(i = 0; i < SLIDES_COUNT ; i ++)
-                    slides[i].src = slidesSrc[i] ;  
+                for(i = 0; i < SLIDES_COUNT ; i ++) {
+                    if (i < slidesSrc.length) {
+                        slides[i].src = slidesSrc[i];
+                    }
+                    else {
+                        slides[i].src = "";
+                    }
+                }
             }
 
 
