@@ -22,6 +22,7 @@ class MovieView(ListView):
 		return render(request,self.template_name,arg)
 
 
+
 class BrowseView(ListView):
 	template_name = "movies/browse.html"
 	def get(self,request):
@@ -48,3 +49,4 @@ class BrowseView(ListView):
 			movies = paginator.get_page(page)
 			arg = {'movies': movies, 'form': form}
 			return render(request, self.template_name, arg)
+
