@@ -10,11 +10,13 @@ class HomeView(TemplateView):
 	template_name = "movies/home.html"
 	def get(self,request):
 		latest_movies =  list(Movie.objects.order_by("-production_date").values_list('movie_logo',flat=True)[:5])
+
 		print(latest_movies)
 		return render(request,self.template_name, {'latest_movies': latest_movies})
 
 class MovieView(TemplateView):
 	template_name = "movies/moviepage.html"
+
 
 class BrowseView(ListView):
 	template_name = "movies/browse.html"
@@ -41,3 +43,4 @@ class BrowseView(ListView):
 			movies = paginator.get_page(page)
 			arg = {'movies': movies , 'form': form}
 			return render(request, self.template_name, arg)
+
