@@ -6,9 +6,9 @@
     <title> Movie Details</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">  
-    <link rel="stylesheet" type="text/css" href="{% static 'movies/css/moviepage.css' %}">   
-		<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'movies/css/moviestyle.css'%}">
+      <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 
   </head>
   <body>
@@ -21,48 +21,51 @@
       Login</a></li>
     </ul>
 
+
     <div class="grid-container">
       <div class="item1">
-        <h1 class="sub-textbox">"Movies Name"</h1>
+        <h1 class="sub-textbox">{{movie.name}}</h1>
         <h2>★</h2>
-        <h4 class="sub-textbox">6.8/10</h4>
-        <img class="Movie-photo" src="img/s1.jpg" />
+        <h4 class="sub-textbox">{{ movie.rate }}/10</h4>
+        <img class="Movie-photo" src="{{ movie.movie_logo }}" />
       </div>
-      <div class="item2"><iframe class="video" src=""></iframe></div> 
+      <div class="item2"><iframe class="video" src="{{ movie.trailer_url }}"></iframe></div>
     </div>
     <hr><br>
     <div class="details">
       <h4 class="sub-textbox" style="text-decoration: underline;">Storyline :</h4>
-      <p class="body-textbox">Captain Jack Sparrow finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis,
-         the terrifying Captain Salazar, escape from the Devil's Triangle, 
-         determined to kill every pirate at sea...including him. 
-         Captain Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, 
-         a powerful artifact that bestows upon its possessor total control over the seas.</p>
+      <p class="body-textbox">{{ movie.description }}</p>
       <hr><br>
-      
+
       <h4 class="sub-textbox"style="text-decoration: underline;">Director :</h4>
+        {% for director in directors %}
       <div class="cast">
         <div class="chip">
-          <img src="img/Bryan Buckley.jpg" alt="Person" width="96" height="96">
-          Bryan Buckley
+          <img src="{{ director.photo }}" alt="Person" width="96" height="96">
+          {{ director.name }}
         </div><br><br>
       </div>
+        {% endfor %}
+      <h4 class="sub-textbox"style="text-decoration: underline;">Writer :</h4>
+        {% for writer in writers %}
+      <div class="cast">
+        <div class="chip">
+          <img src="{{ writer.photo }}" alt="Person" width="96" height="96">
+          {{ writer.name }}
+        </div><br><br>
+      </div>
+        {% endfor %}
 
       <hr><br>
       <h4 class="sub-textbox" style="text-decoration: underline;">Cast :</h4>
       <div class="cast">
+          {% for actor in actors %}
         <div class="chip">
-          <img src="img/Al Pacino.jpg" alt="Person" width="96" height="96">
-          Al Pacino as "Seymour Tolbin"
+          <img src="{{ actor.photo }}" alt="Person" width="96" height="96">
+          {{ actor.name }}
         </div><br><br>
-        <div class="chip">
-          <img src="img/Evan Peters.jpg" alt="Person" width="96" height="96">
-          Evan Peters	as "Jay Bahadur"
-        </div><br><br>
-        <div class="chip">
-          <img src="img/Melanie Griffith.jpg" alt="Person" width="96" height="96">
-          Melanie Griffith as "Maria Bahadur"
-        </div>
+          {% endfor %}
+
       </div>
     </div><hr>
 
@@ -84,7 +87,7 @@
 
     <form class="review"><br>
       <div class="comment">
-        <h4 class="body-textbox" style="color: #FFFFFF">Comment :</h4>
+        <h4 class="body-textbox">Comment :</h4>
         <textarea rows="7"></textarea>
       </div><br>
       <div class="rating">
