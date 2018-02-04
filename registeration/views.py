@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView,View
 from registeration.forms import RegisterForm,LoginForm
-from django.contrib import auth
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 
@@ -10,18 +9,17 @@ class LoginView(TemplateView):
 	template_name = "registeration/login.html"
 
 	def post(self, request):
-		form = RegisterForm(request.POST)
+		form = LoginForm(request.POST)
 		if form.is_valid():
-			username = form.cleaned_data['username']
+			validate_password(password,user=u)
+			user_name = form.cleaned_data['username']
 			password = form.cleaned_data['password']
 			user = authenticate(request, username=username, password=password)
 			if user is not None:
 				login(request, user)
+				return redirect('movies:home')
 
-			else:
-				messages.info(request, 'You must verify the data !')
-
-
+		return render(request,self.template_name,  {'form': form })
 
 
 	def get(self,request):
@@ -40,11 +38,16 @@ class RegisterView(TemplateView):
 	def post(self, request):
 		form = RegisterForm(request.POST)
 		if form.is_valid():
-			form.save(commit=False)
-
-			username = form.cleaned_data['username']
+			user = form.save()
+			user_name = form.cleaned_data['username']
 			password = form.cleaned_data['password']
-			user = authenticate(request,username=username,password =password )
 			login(request,user )
-			return render(request, self.template_name, {'form': form})
+			return redirect('movies:home')
 
+		return render(request,self.template_name,  {'form': form })
+
+class LogoutView(View):
+
+	def get(self, request):
+		logout(request)
+		return redirect('movies:home')

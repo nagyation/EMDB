@@ -52,7 +52,11 @@
 		  	href="home">Home</a></li>
 		  <li><a href="browse">Browse</a></li>
 		  <li><a href="contact">Contact Us</a></li>
+      {% if user.is_authenticated %}
+      <li style="float:right"><a href="{% url 'registeration:logout' %}">Logout</a></li>
+      {% else %}
 		  <li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
+      {% endif %}
 		</ul>
 
 		<h1 class="head-textbox" style="text-align: center;">
