@@ -26,30 +26,24 @@
             Browse Movies
         </h1>
 
-        <div>
+        <form class="search" action="" method="post">
             <div class="textbody-left">
                 <p style="margin-bottom: -2%;">Genre:</p>
-                <form action="" method="post" >
                     {% csrf_token %}
                     {{ form.genre }}
-                </form>
             </div>
             <div class="textbody-right">    
                 <p style="margin-bottom: -2%;">Sort by:</p>
-                <form action="" method="post">
                     {% csrf_token %}
                     {{ form.sort }}
-                </form>
             </div>
 
-            <div style= "margin-left: 30%; max-width:600px;"> 
-                <form class="search" action="" method="post">
+            <div style= "margin-left: 30%; max-width:600px;">
                     {% csrf_token %}
                     {{ form.search }}
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
-        </div>
+            <button style="margin-top: 1.3%; width: 10%; " type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
         <!-- !PAGE CONTENT! -->
         <!-- First Photo Grid-->
@@ -77,10 +71,10 @@
         {% if movies %}
             <div class="pagination" style="text-align: center;">
                 {% if movies.has_previous %}
-                    <a href="?page={{ posts.previous_page_number }}">&laquo;</a>
+                    <a href="?page={{ movies.previous_page_number }}">&laquo;</a>
                 {% endif %}
                 {% for pg in movies.paginator.page_range %}
-                    {% if posts.number == pg %}
+                    {% if movies.number == pg %}
                         <a class="active" href="?page={{ pg }}">{{ pg }}</a>
                     {% else %}
                         <a href="?page={{ pg }}">{{ pg }}</a>

@@ -13,7 +13,7 @@
              border-radius: 7px 0px 0px 7px;
          }
 
-         form.search button {
+         .search button {
              float: left;
              width: 20%;
              padding: 10px;
@@ -27,11 +27,11 @@
              border-radius: 0px 7px 7px 0px;
          }
 
-         form.search button:hover {
+         .search button:hover {
              background: #005c99;
          }
 
-         form.search::after {
+         .search::after {
              content: "";
              clear: both;
              display: table;
