@@ -13,7 +13,7 @@
 
     </head>    
     <body >
-        
+
         <ul>
             <li><a href="home">Home</a></li>
             <li><a class="active" href="browse">Browse</a></li>
@@ -63,21 +63,22 @@
                 <a><img src="" class="cover-photo"></a>
                 <a><img src="" class="cover-photo"></a>
         </div>
+        {% load movies_extras %}
         <!-- Pagination -->
         {% if movies %}
             <div class="pagination" style="text-align: center;">
                 {% if movies.has_previous %}
-                    <a href="?page={{ movies.previous_page_number }}">&laquo;</a>
+                    <a href="?{% url_replace request 'page' movies.previous_page_number %}">&laquo;</a>
                 {% endif %}
                 {% for pg in movies.paginator.page_range %}
                     {% if movies.number == pg %}
-                        <a class="active" href="?page={{ pg }}">{{ pg }}</a>
+                        <a class="active" href="?{% url_replace request 'page' pg %}">{{ pg }}</a>
                     {% else %}
-                        <a href="?page={{ pg }}">{{ pg }}</a>
+                        <a href="?{% url_replace request 'page' pg %}">{{ pg }}</a>
                     {% endif %}
                 {% endfor %}
                 {% if movies.has_next %}
-                    <a href="?page={{ movies.next_page_number }}">&raquo;</a>
+                    <a href="?{% url_replace request 'page' movies.next_page_number %}">&raquo;</a>
                 {% endif %}
             </div>
         {% endif %}

@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator
 from django.views.generic import TemplateView, ListView
 from movies.forms import BrowseForm
 from movies.models import Movie
@@ -36,10 +36,6 @@ class MovieView(ListView):
 
 class BrowseView(ListView):
     template_name = "movies/browse.html"
-    model = Movie
-    context_object_name = "movies"
-    paginate_by = 9
-
 
     def get(self, request):
         form = BrowseForm()
@@ -58,7 +54,8 @@ class BrowseView(ListView):
                                           genre__contains=genre).order_by(sort)
         paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
         page = request.GET.get('page')
+        if page == None:
+            page = 1
         movies = paginator.get_page(page)
         arg = {'movies': movies, 'form': form}
         return render(request, self.template_name, arg)
-
