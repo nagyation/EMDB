@@ -25,12 +25,7 @@ class ReviewCreate(View):
             return redirect("movies:movie", kargs['movie_pk'], )
 
 
-# class ReviewUpdate(UpdateView):
-#     model = Review
-#     fields = ['comment','rate']
-#     success_url = reverse_lazy("movies:movie")
-#
-#
+
 # class ReviewDelete(DeleteView):
 #     model = Review
 #     success_url = reverse_lazy("movies:movie")

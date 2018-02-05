@@ -59,3 +59,4 @@ class BrowseView(ListView):
         movies = paginator.get_page(page)
         arg = {'movies': movies, 'form': form}
         return render(request, self.template_name, arg)
+

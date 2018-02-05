@@ -58,8 +58,6 @@ class RegisterView(TemplateView):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user_name = form.cleaned_data['username']
-            password = form.cleaned_data['password']
             login(request, user)
             return redirect('movies:home')
         return render(request, self.template_name, {'form': form})
