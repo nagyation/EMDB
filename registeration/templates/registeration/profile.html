@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8/">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registeration/css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+ </head>
+ <body>
+
+   <ul>
+    <li><a  href="home">Home</a></li>
+     <li><a href="browse">Browse</a></li>
+	 <li><a href="contact">Contact Us</a></li>
+      {% if user.is_authenticated %}
+      <li style="float:right" ><a href="{% url 'registeration:logout' %}">Logout</a></li>
+      <li style="float:right" class="active"><a href="{% url 'registeration:profile' %}">{{ user.first_name }}</a></li>
+       {% else %}
+		<li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
+       {% endif %}
+   </ul>
+
+    <form class="profile" >
+        {% csrf_token %}
+        <div class="card">
+       {{ user.first_name }} {{ user.last_name }}
+      </div><br>
+            <img src="{{ user.image.url }}"  class="profile_photo">
+
+     </form>
+
+     <div class="create">
+
+      <form class="change" name="register"   method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+        {{ form.as_p }}
+        <input type="reset" value="Reset">
+        <input type="submit" value="Change" onclick="return Validate()">
+       </form>
+     </div>
+
+    </body>
+</html>
+
+

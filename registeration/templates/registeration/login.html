@@ -17,12 +17,10 @@
 		  <li style="float:right"><a  class="active" href="">Log in</a></li>
 		</ul>
   <div class="login">
-   <form name="register">
-				<label >Email</label>
-				<input type="email" name="email" placeholder="examble@host.com"><br>
-				<label >Password</label>
-				<input type="password" name="Your Password" placeholder="Your Password"><br>
-				<div class="signup" > Not a user? <a  href="register" style="color: #FFFFFF">SignUp</a></div>
+   <form name="register" method="POST">
+				{% csrf_token %}
+	            {{ form.as_p }}
+	            <div class="signup" > Not a user? <a  href="register" style="color: #FFFFFF">SignUp</a></div>
 				<div class="button"><input type="submit" value="LOGIN"></div>
 			</form>
   </div>
