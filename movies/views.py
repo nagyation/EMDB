@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator
 from django.views.generic import TemplateView, ListView
 from movies.forms import BrowseForm
 from movies.models import Movie
@@ -38,24 +38,24 @@ class BrowseView(ListView):
     template_name = "movies/browse.html"
 
     def get(self, request):
-        form = BrowseForm()
-        all_movies = Movie.objects.order_by("-production_date")
+        search = request.GET.get('search')
+        if(not search):
+            search = ""
+
+        genre = request.GET.get('genre')
+        if (not genre):
+            genre = ""
+        sort = request.GET.get('sort')
+        if (not sort):
+            sort = "-production_date"
+
+        form = BrowseForm(initial={'sort':sort,'search':search,'genre':genre})
+        all_movies = Movie.objects.filter(name__contains=search,
+                                          genre__contains=genre).order_by(sort)
         paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
         page = request.GET.get('page')
+        if page == None:
+            page = 1
         movies = paginator.get_page(page)
         arg = {'movies': movies, 'form': form}
         return render(request, self.template_name, arg)
-
-    def post(self, request):
-        form = BrowseForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data['search']
-            genre = form.cleaned_data['genre']
-            sort = form.cleaned_data['sort']
-            form = BrowseForm()
-            all_movies = Movie.objects.filter(name__contains=text, genre__contains=genre).order_by(sort)
-            paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
-            page = request.GET.get('page')
-            movies = paginator.get_page(page)
-            arg = {'movies': movies, 'form': form}
-            return render(request, self.template_name, arg)

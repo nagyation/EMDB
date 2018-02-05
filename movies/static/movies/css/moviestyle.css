@@ -9,12 +9,12 @@
         .details p,h4{margin-left: 1%; margin-top: -2%;}
         .details p {margin-top: -3.5%;}
         .item1 {grid-column-start: 1; grid-column-end: 3;}
-        .item1 h1{margin-left: 6%;}
+        .item1 h1{margin-left: 2%;}
         .item1 h2{color: #FFFA00 ;font-size: 1.5em; margin-left: 120%; margin-top: -14.7%;}
         .item1 h4{color: #fff ; font-size: 1.2em; margin-left: 128%; margin-top: -12.8%;}
         .Movie-photo{width: 271px; height: 404px; margin: 0 auto;}
         .video{width:800px; height:400px; margin-left: -8%; margin-top: 10%; }
-        .body-textbox{color: white; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;}
+
         .chip {
           display: inline-block;
           padding: 0 25px;
@@ -31,8 +31,7 @@
             width: 70px;
             border-radius: 70%;}
         .cast{margin-top: -2.5%;}
-        .commintsList{padding: 2%; width: 80%; margin-left: 7%;}
-        .commintsList div{ background-color: var(--secondry-color); border-radius: 5px;}
+
         .review{ padding: 2%; width: 80%; background-color:var(--secondry-color); border-radius: 25px; margin-left: 8%;}
         .comment textarea{ background-color : white;
                color: black;

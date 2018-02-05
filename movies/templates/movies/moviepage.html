@@ -9,6 +9,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'movies/css/moviestyle.css'%}">
       <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+      <style>
+          .body-textbox{color: white; font-size: 1.2em; margin-left: 1.1%; margin-top: -2%;}
+          .comment-textbox{color: white; font-size: 1.2em; margin-left: 1.9%;}
+          .comment-view{color: white; font-size: 1.2em; margin-left: 1.5%; margin: auto;}
+          .commentsList{padding: 2%; width: 80%; margin-left: 7%;}
+        .commentsList div{ background-color: var(--secondry-color); border-radius: 5px;}
+      </style>
 
   </head>
   <body>
@@ -17,8 +24,7 @@
 		  <li><a href="home">Home</a></li>
 		  <li><a href="browse">Browse</a></li>
 		  <li><a href="contact">Contact Us</a></li>
-		  <li style="float:right"><a href="{% url 'registeration:login' %}">
-      Login</a></li>
+		  <li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
     </ul>
 
 
@@ -69,17 +75,14 @@
       </div>
     </div><hr>
 
-    <div class="commintsList">
+    <div class="commentsList">
       <h4 class="sub-textbox" style="text-decoration: underline;">Comments :</h4>
       {% for r in reviews %}
-      <div style="padding:4%;">
-        <div>
-        <h4 class="body-textbox"style="text-decoration: underline;float:left">{{r.created_by.first_name}} {{r.created_by.last_name}}</h4>
-        <p class="body-textbox" style="margin-left:50%;float:left; margin-right: 5%">★{{r.rate}}/10</p>
-        </div>
-        <div>
-        <p class="body-textbox">{{r.comment}}</p>
-        </div>
+      <div style="padding:0.5%;">
+        <h4 class="comment-view"style="text-decoration: underline;float:left">{{r.created_by.first_name}} {{r.created_by.last_name}}:</h4>
+        <p class="comment-view" style="margin-left:50%;float:left; margin-right: 5% ; color: yellow">★{{r.rate}}/10</p>
+        <br>
+        <p class="comment-textbox">{{r.comment}}</p>
       </div><hr><br>
       {% endfor %}
     </div>
