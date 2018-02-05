@@ -3,13 +3,19 @@ var slideIndexFront = 2;
 var SLIDES_COUNT = 3;
 var currentSlides= ["","",""];
 var slidesSrc = [];
+var slides_id = [];
+var current_ids = [];
 var i;
 
-function setSlides(slides)
+function setSlides(slides,ids)
 {
     slidesSrc= slides;
+    slides_id = ids;
     for(i=0; i < SLIDES_COUNT ; i++)
-		    currentSlides[i] = slidesSrc[(slideIndexRear+i) % slidesSrc.length];
+    {
+		  	    currentSlides[i] = slidesSrc[(slideIndexRear+i) % slidesSrc.length];
+		  	    current_ids[i] = slides_id[(slideIndexRear+i) % slidesSrc.length];
+	}
     showSlides();
 
 }
@@ -43,5 +49,8 @@ function showSlides() {
 	  var slides = document.getElementsByClassName("cover-photo");
 
 	  for(i = 0; i < SLIDES_COUNT ; i ++)
-	  	  slides[i].src = currentSlides[i] ;  
+	  {
+	  	  slides[i].src = currentSlides[i] ;
+	  	  slides[i].parentNode.href = slides_id[i];
+	  	  }
 }

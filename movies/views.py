@@ -12,7 +12,8 @@ class HomeView(TemplateView):
 
     def get(self, request):
         latest_movies = list(Movie.objects.order_by("-production_date").values_list('movie_logo', flat=True)[:5])
-        return render(request, self.template_name, {'latest_movies': latest_movies})
+        movies_id = list(Movie.objects.order_by("-production_date").values_list('id', flat=True)[:5])
+        return render(request, self.template_name, {'latest_movies': latest_movies, 'movies_id':movies_id})
 
 
 class MovieView(ListView):

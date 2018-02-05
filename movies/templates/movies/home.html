@@ -69,17 +69,17 @@
 		</h2>
 		<div style="width: 100%;">
 
-			  <img src="" class="cover-photo" style="margin-left: 16%">
+			  <a href=""><img src="" class="cover-photo" style="margin-left: 16%"></a>
 	      
-			  <img src="" class="cover-photo">
+			<a href=""><img src="" class="cover-photo"></a>
 
-			  <img src="" class="cover-photo">
+			  <a href="" ><img src="" class="cover-photo"></a>
 
         
 	      <script src ="{% static 'movies/scripts/slideshow.js' %}">
         </script>
         <script>
-         setSlides({{latest_movies|safe}});
+         setSlides({{latest_movies|safe}},{{movies_id|safe}});
         </script>
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
