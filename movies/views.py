@@ -36,26 +36,29 @@ class MovieView(ListView):
 
 class BrowseView(ListView):
     template_name = "movies/browse.html"
+    model = Movie
+    context_object_name = "movies"
+    paginate_by = 9
+
 
     def get(self, request):
         form = BrowseForm()
-        all_movies = Movie.objects.order_by("-production_date")
+        search = request.GET.get('search')
+        if(not search):
+            search = ""
+
+        genre = request.GET.get('genre')
+        if (not genre):
+            genre = ""
+        sort = request.GET.get('sort')
+        if (not sort):
+            sort = "-production_date"
+
+        all_movies = Movie.objects.filter(name__contains=search,
+                                          genre__contains=genre).order_by(sort)
         paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
         page = request.GET.get('page')
         movies = paginator.get_page(page)
         arg = {'movies': movies, 'form': form}
         return render(request, self.template_name, arg)
 
-    def post(self, request):
-        form = BrowseForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data['search']
-            genre = form.cleaned_data['genre']
-            sort = form.cleaned_data['sort']
-            form = BrowseForm()
-            all_movies = Movie.objects.filter(name__contains=text, genre__contains=genre).order_by(sort)
-            paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
-            page = request.GET.get('page')
-            movies = paginator.get_page(page)
-            arg = {'movies': movies, 'form': form}
-            return render(request, self.template_name, arg)
