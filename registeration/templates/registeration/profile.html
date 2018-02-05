@@ -23,20 +23,18 @@
        {% endif %}
    </ul>
 
-    <form class="profile">
+    <form class="profile" >
+        {% csrf_token %}
         <div class="card">
        {{ user.first_name }} {{ user.last_name }}
       </div><br>
-        {% if user.image.url %}
-            <img src="{{ user.image.url }}" alt="{{ user.first_name }}" class="profile_photo">
-        {% else %}
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQa5Ej3441nczWsWFHcl2NS9bii3fwY3pBUcr-4fdAtmXUn9MEMQ" alt="{{ user.first_name }}" class="profile_photo">
-        {% endif %}
+            <img src="{{ user.image.url }}"  class="profile_photo">
+
      </form>
 
      <div class="create">
 
-      <form class="change" name="register"   method="post" >
+      <form class="change" name="register"   method="post" enctype="multipart/form-data">
        {% csrf_token %}
         {{ form.as_p }}
         <input type="reset" value="Reset">
