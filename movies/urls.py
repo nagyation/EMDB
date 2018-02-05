@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from movies.views import HomeView, BrowseView, MovieView
 from . import views
 
@@ -7,5 +7,5 @@ urlpatterns = [
 	path('', HomeView.as_view(), name='home'),
 	path('home', HomeView.as_view()),
 	path('browse', BrowseView.as_view(), name='browse'),
-	path('movie', MovieView.as_view(), name='movie'),
+	path('movie/<int:pk>', MovieView.as_view(), name='movie'),
 ]
