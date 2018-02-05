@@ -27,7 +27,11 @@
         <div class="card">
        {{ user.first_name }} {{ user.last_name }}
       </div><br>
-      <img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" alt="{{ user.first_name }}" class="profile_photo">
+        {% if user.userprofile.image.url %}
+            <img src="{{ user.userprofile.image.url }}" alt="{{ user.first_name }}" class="profile_photo">
+        {% else %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQa5Ej3441nczWsWFHcl2NS9bii3fwY3pBUcr-4fdAtmXUn9MEMQ" alt="{{ user.first_name }}" class="profile_photo">
+        {% endif %}
      </form>
 
      <div class="create">

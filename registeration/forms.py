@@ -4,10 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 
-
 class ProfileForm(forms.ModelForm):
-	password=forms.CharField(widget=forms.PasswordInput())
-	confirm_password = forms.CharField(widget=forms.PasswordInput())
+	password=forms.CharField(widget=forms.PasswordInput(),required=False)
+	confirm_password = forms.CharField(widget=forms.PasswordInput(),required=False)
 	class Meta:
 		model=User
 		fields=['first_name','last_name','email','password']
