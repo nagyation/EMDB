@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Browse</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css'%}">
-        <link rel="stylesheet" type="text/css" href="{% static 'movies/css/browsestyle.css'%}">
-        <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <head>
+    <meta charset="utf-8/">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registeration/css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+ </head>
+ <body>
 
-    </head>    
-    <body >
-        
-           <ul>
-            <li><a href="home">Home</a></li>
-            <li><a class="active" href="browse">Browse</a></li>
-            <li ><a href="{% url 'registeration:profile' %}">
-             My Profile</a></li>
-            <li><a href="contact">Contact Us</a></li>
-            <li style="float:right"><a href="{% url 'registeration:login' %}">
-            Login</a></li>
-            
-        </ul>
+   <ul>
+    <li><a  href="home">Home</a></li>
+     <li><a href="browse">Browse</a></li>
+	 <li><a href="contact">Contact Us</a></li>
+      {% if user.is_authenticated %}
+      <li style="float:right" ><a href="{% url 'registeration:logout' %}">Logout</a></li>
+      <li style="float:right" class="active"><a href="{% url 'registeration:profile' %}">{{ user.first_name }}</a></li>
+       {% else %}
+		<li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
+       {% endif %}
+   </ul>
 
-
+    <form class="profile">
         <div class="card">
-          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-            <h1>John Doe</h1>
+       {{ user.first_name }} {{ user.last_name }}
+      </div><br>
+      <img src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" alt="{{ user.first_name }}" class="profile_photo">
+     </form>
 
-        </div>
+     <div class="create">
 
-
-
-
+      <form class="change" name="register"   method="post" >
+       {% csrf_token %}
+        {{ form.as_p }}
+        <input type="reset" value="Reset">
+        <input type="submit" value="Change" onclick="return Validate()">
+       </form>
+     </div>
 
     </body>
+</html>
 
-  </html>
+
