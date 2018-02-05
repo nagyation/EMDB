@@ -8,4 +8,4 @@ urlpatterns = [
     path('movies/', include('movies.urls',namespace='movies')),
     path('login/', include('registeration.urls',namespace='registeration')),
     path('review/', include('review.urls',namespace='review')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
