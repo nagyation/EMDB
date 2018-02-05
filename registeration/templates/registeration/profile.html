@@ -12,8 +12,8 @@
  <body>
 
    <ul>
-    <li><a  href="home">Home</a></li>
-     <li><a href="browse">Browse</a></li>
+    <li><a  href="{% url 'movies:home' %}">Home</a></li>
+     <li><a href="{% url 'movies:browse' %}">Browse</a></li>
 	 <li><a href="contact">Contact Us</a></li>
       {% if user.is_authenticated %}
       <li style="float:right" ><a href="{% url 'registeration:logout' %}">Logout</a></li>
