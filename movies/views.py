@@ -38,7 +38,6 @@ class BrowseView(ListView):
     template_name = "movies/browse.html"
 
     def get(self, request):
-        form = BrowseForm()
         search = request.GET.get('search')
         if(not search):
             search = ""
@@ -50,6 +49,7 @@ class BrowseView(ListView):
         if (not sort):
             sort = "-production_date"
 
+        form = BrowseForm(initial={'sort':sort,'search':search,'genre':genre})
         all_movies = Movie.objects.filter(name__contains=search,
                                           genre__contains=genre).order_by(sort)
         paginator = Paginator(all_movies, 9)  # Show 9 contacts per page
