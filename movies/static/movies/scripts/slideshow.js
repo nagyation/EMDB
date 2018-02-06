@@ -51,6 +51,6 @@ function showSlides() {
 	  for(i = 0; i < SLIDES_COUNT ; i ++)
 	  {
 	  	  slides[i].src = currentSlides[i] ;
-	  	  slides[i].parentNode.href = slides_id[i];
+	  	  slides[i].parentNode.href = "movie/" + slides_id[i];
 	  	  }
 }

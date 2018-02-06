@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8/">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/about.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'emdb/css/pagestyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+ </head>
+ <body>
+
+   <ul>
+      <li><a href="{% url 'movies:home' %}">Home</a></li>
+		  <li><a href="{% url 'movies:browse' %}">Browse</a></li>
+       <li class="active"><a href="/about">About</a></li>
+        {% if user.is_authenticated %}
+      <li style="float:right" ><a href="{% url 'registeration:logout' %}">Logout</a></li>
+      <li style="float:right" class="active"><a href="{% url 'registeration:profile' %}">{{ user.first_name }}</a></li>
+       {% else %}
+		<li style="float:right"><a href="{% url 'registeration:login' %}">Login</a></li>
+       {% endif %}
+   </ul>
+			
+		  	<br><br>
+			<h1 style="color: #FFFFFF;text-align: center;">This site offers the latest international movies</h1>
+			<h3 style="color: #FFFFFF;text-align: center;">Feel free to browse our movies' collections, and leave your review<br>
+        </h3>
+    <br><br>
+				
+   <h1 style=" color: #FFFFFF;left: 100px" > Developed by : </h1>
+				
+				<div class="card">
+       <img src= "{% static 'emdb/img/15390714_10210885959135311_6762003645743114172_n.jpg' %}" style="width:100%;height:320px;">
+       <h1>Mahmoud Nagy </h1>
+      <p>Helwan University</p>
+      <div class="k">
+          <div class="p"><a  class="p1" href="https://www.facebook.com/MnMahmoud09"> <img  class="p6" src="{% static 'emdb/img/facebook-3-32.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.instagram.com/accounts/login//"> <img  class="p5"src="{% static 'emdb/img/instagram-24.png' %}"alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://twitter.com/?lang=en"> <img  class="p5" src="{% static 'emdb/img/twitter-24.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.linkedin.com/uas/login"> <img  class="p5"src="{% static 'emdb/img/linkedin-5-24.png' %}" alt="HTML tutorial" ></a></div>
+
+       </div>    
+				</div>
+				
+				
+					<div class="card">
+       <img  src="{% static 'emdb/img/23032859_1505321842836959_406603437134814174_n.jpg' %}"  style="width:100%;height:320px;">
+       <h1>Mohamed Medhat</h1>
+      <p>Helwan University</p>
+      <div class="k">
+          <div class="p"><a  class="p1" href="https://www.facebook.com/mohamed.medhat.37625"> <img  class="p6" src="{% static 'emdb/img/facebook-3-32.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.instagram.com/mohamed.medhat.37625/(Instagram)"> <img  class="p5"src="{% static 'emdb/img/instagram-24.png' %}"alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://twitter.com/Mohamed51314481"> <img  class="p5" src="{% static 'emdb/img/twitter-24.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.linkedin.com/in/mohamed-medhat-aa500a10a(LinkedIn)"> <img  class="p5"src="{% static 'emdb/img/linkedin-5-24.png' %}" alt="HTML tutorial" ></a></div>
+
+       </div>    
+				</div>
+								
+								
+								
+					<div class="card">
+						<div>
+       <img src="{% static 'emdb/img/IMG-20160210-WA0005.jpg' %}"  style="width:100%;height:320px;">
+       <h1>Mostafa Elshazli</h1>
+       <p>Helwan University</p>
+							</div>
+      <div class="k">
+          <div class="p"><a  class="p1" href="https://www.facebook.com/mostafa.elshazli"> <img  class="p6" src="{% static 'emdb/img/facebook-3-32.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.instagram.com/accounts/login//"> <img  class="p5"src="{% static 'emdb/img/instagram-24.png' %}"alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://twitter.com/?lang=en"> <img  class="p5" src="{% static 'emdb/img/twitter-24.png' %}" alt="HTML tutorial" ></a></div>
+          <div class="p"><a  class="p2" href="https://www.linkedin.com/uas/login"> <img  class="p5"src="{% static 'emdb/img/linkedin-5-24.png' %}" alt="HTML tutorial" ></a></div>
+
+       </div>
+       
+                    </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+</html>

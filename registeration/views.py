@@ -67,3 +67,10 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('movies:home')
+
+
+from django.views.generic import TemplateView
+
+
+class AboutView(TemplateView):
+    template_name = "registeration/about.html"
