@@ -27,18 +27,25 @@ function plusSlides(n)
 		if(n > 0)
 		{
 			  for(i = SLIDES_COUNT-1; i >0;i--)
+				    {
 				    currentSlides[i] = currentSlides[i-1];
+				    current_ids[i] = current_ids[i -1];
+				    }
 			  slideIndexRear= (slideIndexRear - 1 + slidesSrc.length) %slidesSrc.length;
 			  slideIndexFront= (slideIndexFront - 1 + slidesSrc.length) %slidesSrc.length;
 			  currentSlides[i] = slidesSrc[slideIndexRear];
-			  
+			  current_ids[i] = slides_id[slideIndexRear];
 		}
 		else{
 			  for(i = 0; i < SLIDES_COUNT-1;i++)
+				    {
 				    currentSlides[i] = currentSlides[i+1];
+				    current_ids[i] = current_ids[i+1];
+				    }
 			  slideIndexRear = (slideIndexRear + 1) %slidesSrc.length;
 			  slideIndexFront = (slideIndexFront + 1) %slidesSrc.length;
 			  currentSlides[i] = slidesSrc[slideIndexFront];
+			  current_ids[i] = slides_id[slideIndexFront];
 		}
 		
 	  showSlides();
@@ -51,6 +58,6 @@ function showSlides() {
 	  for(i = 0; i < SLIDES_COUNT ; i ++)
 	  {
 	  	  slides[i].src = currentSlides[i] ;
-	  	  slides[i].parentNode.href = "movie/" + slides_id[i];
-	  	  }
+	  	  slides[i].parentNode.href = "movie/" + current_ids[i];
+	  	 }
 }
