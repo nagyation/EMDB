@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from review.models import Review
 from movies.models import Movie
 from review.forms import ReviewForm
-from django.contrib.auth.models import User
+from registeration.models import User
 from django.db import IntegrityError
 
 class ReviewCreate(View):
