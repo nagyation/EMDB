@@ -4,7 +4,7 @@ from movies.forms import BrowseForm
 from movies.models import Movie
 from django.shortcuts import render, redirect
 from review.models import Review
-from django.contrib.auth.models import User
+from registeration.models import User
 
 
 class HomeView(TemplateView):
